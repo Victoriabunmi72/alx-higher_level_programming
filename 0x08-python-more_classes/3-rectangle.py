@@ -14,8 +14,8 @@ class Rectangle:
             height: rectangle height
         """
 
-        self. width  =  width
-        self. height  =  height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -24,9 +24,9 @@ class Rectangle:
             rectangle width
         """
 
-        return  self. __width
+        return self.__width
 
-    @width. setter
+    @width.setter
     def width(self, value):
         """ method that defines the width
         Args:
@@ -40,7 +40,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self. __width  =  value
+        self.__width = value
 
     @property
     def height(self):
@@ -49,9 +49,9 @@ class Rectangle:
             rectangle height
         """
 
-        return  self. __height
+        return self.__height
 
-    @height. setter
+    @height.setter
     def height(self, value):
         """ method that defines the height
         Args:
@@ -94,10 +94,10 @@ class Rectangle:
 
         rectangle = ""
 
-        if  self. width  ==  0  or  self. height  ==  0:
+        if self.width == 0 or self.height == 0:
             return rectangle
 
-        for  i  in  range(self. height):
-            rectangle  += ("#"  *  self. width) +  "\n"
+        for i in range(self.height):
+            rectangle += ("#" * self.width) + "\n"
 
         return rectangle[:-1]
