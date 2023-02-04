@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 0-add_integer.py
-# Oluwabunmi Olabode 
+# Victoria Oluwabunmi Olabode <bhummhie97@gmail.com> 
 """Defines an integer addition function."""
 
 
