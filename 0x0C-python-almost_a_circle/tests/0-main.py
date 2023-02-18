@@ -1,4 +1,22 @@
 #!/usr/bin/python3
-read_file = __import__('0-read_file').read_file
+""" 0-main """
+from models.base import Base
 
-read_file('my_file_0.txt')
+if __name__ == "__main__":
+    b1 = Base()
+    print(b1.id)
+
+    b2 = Base()
+    print(b2.id)
+
+    b3 = Base()
+    print(b3.id)
+
+    b4 = Base(12)
+    print(b4.id)
+
+    b5 = Base()
+    print(b5.id)
+
+    b6 = Base(98)
+    print(b6.id)

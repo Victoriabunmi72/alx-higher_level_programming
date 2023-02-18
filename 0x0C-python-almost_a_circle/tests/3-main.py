@@ -1,29 +1,14 @@
 #!/usr/bin/python3
-to_json_string = __import__('3-to_json_string').to_json_string
+""" 3-main """
+from models.rectangle import Rectangle
 
-my_list = [1, 2, 3]
-s_my_list = to_json_string(my_list)
-print(s_my_list)
-print(type(s_my_list))
+if __name__ == "__main__":
 
-my_dict = { 
-    'id': 12,
-    'name': "John",
-    'places': [ "San Francisco", "Tokyo" ],
-    'is_active': True,
-    'info': {
-        'age': 36,
-        'average': 3.14
-    }
-}
-s_my_dict = to_json_string(my_dict)
-print(s_my_dict)
-print(type(s_my_dict))
+    r1 = Rectangle(3, 2)
+    print(r1.area())
 
-try:
-    my_set = { 132, 3 }
-    s_my_set = to_json_string(my_set)
-    print(s_my_set)
-    print(type(s_my_set))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    r2 = Rectangle(2, 10)
+    print(r2.area())
+
+    r3 = Rectangle(8, 7, 0, 0, 12)
+    print(r3.area())

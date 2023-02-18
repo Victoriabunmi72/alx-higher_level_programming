@@ -1,12 +1,29 @@
 #!/usr/bin/python3
-Student = __import__('9-student').Student
+""" 9-main """
+from models.square import Square
 
-students = [Student("John", "Doe", 23), Student("Bob", "Dylan", 27)]
+if __name__ == "__main__":
+    s1 = Square(5)
+    print(s1)
+    print(s1.area())
+    s1.display()
 
-for student in students:
-    j_student = student.to_json()
-    print(type(j_student))
-    print(j_student['first_name'])
-    print(type(j_student['first_name']))
-    print(j_student['age'])
-    print(type(j_student['age']))
+    print("---")
+
+    s2 = Square(2, 2)
+    print(s2)
+    print(s2.area())
+    s2.display()
+
+    print("---")
+
+    s3 = Square(3, 1, 3)
+    print(s3)
+    print(s3.area())
+    s3.display()
+
+    s4 = Square(16)
+    print(s4)
+    print(s4)
+    print(s4.area())
+    s4.display()
