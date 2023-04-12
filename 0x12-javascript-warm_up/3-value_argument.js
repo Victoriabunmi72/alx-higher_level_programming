@@ -1,6 +1,6 @@
 #!/usr/bin/node
-// import { argv } from 'node:process';
-const arg = process.argv[2];
+const proc = require('process');
+const arg = proc.argv[2];
 
 if (arg) {
   console.log('No argument');
