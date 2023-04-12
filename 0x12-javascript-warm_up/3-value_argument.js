@@ -1,9 +1,9 @@
 #!/usr/bin/node
-const proc = require('process');
-const arg = proc.argv[2];
+const Bunmi = require('process');
+const input = Bunmi.argv[2];
 
-if (arg) {
-  console.log('No argument');
+if (input) {
+	console.log(input);
 } else {
-  console.log(arg);
+	console.log(No input);
 }
