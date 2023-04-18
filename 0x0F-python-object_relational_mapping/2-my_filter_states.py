@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""A script that takes in an argument and display all the states...."""
+
 import MySQLdb
 import sys
 
@@ -21,13 +23,13 @@ if __name__ == "__main__":
             "ORDER BY id ASC",
             ]).format(sys.argv[4])
 
-    cur.execute(myQuery)
     cur = conn.cursor()
+    cur.execute(myQuery)
 
     """fetching and printing out the, result"""
     result = cur.fetchall()
     for row in result:
-        print(result)
+        print(row)
 
     """closing the cursor and connection"""
     cur.close()
