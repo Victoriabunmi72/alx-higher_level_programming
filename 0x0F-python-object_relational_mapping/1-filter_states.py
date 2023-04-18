@@ -7,21 +7,19 @@ import sys
 
 if __name__ == "__main__":
 
-    username, password, dbname = sys.argv[1:]
-
     db = MySQLdb.connect(
             host="localhost",
             port=3306,
-            user=username,
-            passwd=password,
-            db=dbname,
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
             charset="utf8")
 
     cur = db.cursor()
 
-    myQuery = "".join[
+    myQuery = "".join([
             "SELECT * FROM states WHERE name LIKE BINARY 'N%'",
-            "ORDER BY states.id ASC"]
+            "ORDER BY states.id ASC"])
 
     cur.execute(myQuery)
     curs = cur.fetchall()
@@ -30,5 +28,5 @@ if __name__ == "__main__":
     for row in curs:
         print(row)
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()
