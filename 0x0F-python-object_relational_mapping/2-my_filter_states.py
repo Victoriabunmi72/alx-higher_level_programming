@@ -27,7 +27,7 @@ if __name__ == "__main__":
     """fetching and printing out the, result"""
     result = cur.fetchall()
     for row in result:
-        print(row)
+        print(result)
 
     """closing the cursor and connection"""
     cur.close()
