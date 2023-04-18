@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    myQuery = "".joint[
+    myQuery = "".join[
             "SELECT * FROM states WHERE name LIKE BINARY 'N%'",
             "ORDER BY states.id ASC"]
 
