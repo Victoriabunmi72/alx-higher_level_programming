@@ -23,7 +23,7 @@ if __name__ == ("__main__"):
         ]).format(sys.argv[4])
     cur.execute(myQuery)
     res = cur.fetchall()
-    strRes = ','.join([i[0] for i in res])
+    strRes = ', '.join([i[0] for i in res])
     print(strRes)
     cur.close()
     conn.close()
