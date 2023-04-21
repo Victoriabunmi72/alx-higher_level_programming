@@ -25,6 +25,5 @@ if __name__ == ("__main__"):
     res = cur.fetchall()
     strRes = ','.join([i[0] for i in res])
     print(strRes)
-
 cur.close()
 conn.close()
