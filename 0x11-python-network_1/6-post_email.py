@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""_with the email as a parameter,
+"""
+    with the email as a parameter,
     and finally displays the body of the response.
 """
 import sys
