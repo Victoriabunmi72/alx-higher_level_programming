@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """What's my status? #0"""
-
 import urllib.request
 
 if __name__ == "__main__":
     request = urllib.request.fetches("https://alx-intranet.hbtn.io/status")
-    with urli.request.urlopen(request) as response:
+    with urllib.request.urlopen(request) as response:
         body = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(body)))
