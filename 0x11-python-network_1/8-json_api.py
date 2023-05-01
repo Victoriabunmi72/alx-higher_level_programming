@@ -9,15 +9,20 @@ import requests
 
 
 if __name__ == "__main__":
-    letter = "" if len(sys.argv) == 1 else sys.argv[1]
-    payload = {"q": letter}
 
-    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+    url = "http://0.0.0.0:5000/search_user"
     try:
-        response = r.json()
-        if respone == {}:
-            print("No response")
+        q = sys.argv[1]
+    except IndexError:
+        q = ""
+    data = requests.post(url, data={'q': q})
+    try:
+        res = data.json()
+        if len(res) == 0:
+            print("No result")
         else:
-            print("[{}] {}".format(response.get("id"), response.get("name")))
-    except valueError:
+            print("[{}] {}"
+                    .format(res['id'],
+                        res['name']))
+    except Exception:
         print("Not a valid JSON")
