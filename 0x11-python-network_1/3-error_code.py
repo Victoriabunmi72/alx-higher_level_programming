@@ -9,7 +9,7 @@ if __name__ == "__main__":
     try:
         url = sys.argv[1]
         req = Request(url)
-        with urlopen(req) as vic:
-            print(vic.read().decode('utf-8'))
+        with urlopen(req) as d:
+            print(d.read().decode('utf-8'))
     except HTTPError as err:
         print("Enter code:{}".format(err.getcode()))
