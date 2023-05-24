@@ -1,10 +1,12 @@
 #!/usr/bin/node
+// Creates file and writes content from args
 
 const fs = require('fs');
+const filePath = process.argv[2];
+const content = process.argv[3];
 
-const filepath = String(process.argv[2]);
-const stringToWrite = String(process.argv[3]);
-
-fs.WriteFile(filePath, stringToWrite, { encoding: 'utf-8' }), (err) => {
-	if (err) throw err;
+fs.writeFile(filePath, content, 'utf8', function (err) {
+  if (err) {
+    console.log(err);
+  }
 });
