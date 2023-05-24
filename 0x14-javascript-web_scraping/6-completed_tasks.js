@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//script that computes the number of tasks completed by user
+// Shows the number of tasks completed by User
 const request = require('request');
 const url = process.argv[2];
 
