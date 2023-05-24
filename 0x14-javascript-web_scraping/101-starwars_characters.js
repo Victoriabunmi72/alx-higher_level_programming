@@ -1,23 +1,30 @@
 #!/usr/bin/node
+
+const argv = require('process').argv;
 const request = require('request');
 
-// Retrieve the movie ID from the command-line of argument
-const movieId = process.argv[2];
-const url = `https://swapi.co/api/films/${movieId}`;
+const url = 'https://swapi-api.hbtn.io/api/films/' + argv[2];
 
-request(url, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    const movie = JSON.parse(body);
-    const characters = movie.characters;
+function makeRequests (urls) {
+  const url = urls.shift();
+  request(url, (error, response, body) => {
+    if (urls.length) {
+      makeRequests(urls);
+    }
+    if (error) {
+      console.log(error);
+    }
 
-    characters.forEach((characterUrl) => {
-      request(characterUrl, function (error, response, body) {
-        if (!error && response.statusCode === 200) {
-          const character = JSON.parse(body);
-          const characterName = character.name;
-          console.log(characterName);
-        }
-      });
-    });
+    console.log(JSON.parse(body).name);
+  });
+}
+
+request(url, (error, response, body) => {
+  if (error) {
+    console.log(error);
   }
+
+  const characters = JSON.parse(body).characters;
+
+  makeRequests(characters);
 });
