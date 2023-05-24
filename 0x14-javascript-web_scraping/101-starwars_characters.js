@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-// Retrieve the movie ID from the command-line argument
+// Retrieve the movie ID from the command-line of argument
 const movieId = process.argv[2];
 const url = `https://swapi.co/api/films/${movieId}`;
 
